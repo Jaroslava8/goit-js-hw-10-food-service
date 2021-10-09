@@ -6,6 +6,8 @@ const menuList = document.querySelector('.js-menu');
 menuList.insertAdjacentHTML('beforeend', createMenuCards(menuCards));
 function createMenuCards(menuCards){
     return menuItems(menuCards);
+    document.body.classList.add(localStorage.getItem('Theme')??Theme.LIGHT);
+    buttonSwitch.checked = localStorage.getItem('Theme')===Theme.DARK;
 }
 const Theme = {
     LIGHT: 'light-theme',
